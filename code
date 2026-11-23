@@ -1,0 +1,29 @@
+file_path = "/home/kaplann/shared_folder/file_format_examples/table/example.csv"
+file_handle = open(file_path, mode="r")
+# We are excluding the file header from the rest of the data
+column_headers = file_handle.readline()
+column_headers = column_headers.split(",")
+column_headers
+
+patient_data = dict.fromkeys(column_headers, list())
+patient_data
+patient_data = {'Name': [],
+ 'Country': [],
+ 'Gender': [],
+ 'Age': [],
+
+for line in file_handle:
+    line = line.rstrip("\n")
+    columns = line.split(",")
+    #
+    name = columns[0]
+    country = columns[1]
+    gender = columns[2]
+    age = columns[3]
+    
+ 
+    #
+    patient_data["Name"].append(name)
+    patient_data["Country"].append(country)
+    patient_data["Gender"].append(gender)
+    patient_data["Age"].append(age)}
